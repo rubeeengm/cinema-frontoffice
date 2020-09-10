@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+	<section class="hero is-light is-bold is-fullheight">
+	    <div class="hero-body">
+		<div class="container">
+		    <h1 class="title">Cinema FrontOffice</h1>
+		    <h2 class="subtitle">Compra ti entrada aquí mismo</h2>
+		    <login></login>
+		</div>
+	    </div>
+	</section>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import login from './components/Login.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+	name: 'app'
+	, components: {
+	    login
+	}
+	, mounted() {
+	    this.$services.authService.login();
+	}
+    }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
