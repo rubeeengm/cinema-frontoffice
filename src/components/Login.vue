@@ -26,8 +26,8 @@
 	name: 'login'
 	, data() {
 	    return {
-		email: null
-		, password: null
+		email: 'eduardo@kodoti.com'
+		, password: '123456'
 		, error: null
 	    }
 	}
@@ -38,8 +38,11 @@
 		    email: this.email
 		    , password: this.password
 		}).then(response => {
-		    if (!response.data.isSucces) {
-			this.error = response.data.message
+		    if (!response.data.isSuccess) {
+			this.error = response.data.message;
+		    } else {
+			this.$services.authService.prepare(response.data.access_token);
+			this.$parent.step = "catalog";
 		    }
 		});
 	    }

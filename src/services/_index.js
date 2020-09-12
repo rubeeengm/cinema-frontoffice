@@ -1,6 +1,13 @@
 import axios from 'axios';
 import authService from './AuthService.js';
+import cinemaService from './CinemaService.js';
+import movieService from './MovieService.js';
+
+// Axios configuration
+axios.defaults.headers.common.Accept = 'application/json';
 
 export default {
     authService: new authService(axios, window.baseUrl)
+    , cinemaService: new cinemaService(axios, window.baseUrl)
+    , movieService: new movieService(axios, window.baseUrl)
 }

@@ -3,5 +3,8 @@ export default(axios, baseUrl) => {
 	login(params) {
 	    return axios.post(`${baseUrl}auth/login`, params);
 	}
+	, prepare(token) {
+	    axios.defaults.headers.common.authorization = token;
+	}
     }
 }
