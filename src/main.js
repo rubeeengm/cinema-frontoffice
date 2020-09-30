@@ -13,6 +13,11 @@ Vue.use({
     }
 });
 
+//Filters
+Vue.filter('currency', (value) => {
+    return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+});
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
