@@ -1,7 +1,7 @@
 export default(axios, baseUrl) => {
     return {
-	getAll() {
-	    return axios.get(`${baseUrl}movies`);
-	}
+		getAll() {
+		    return axios.get(`${baseUrl}movies`);
+		}
     }
 }
